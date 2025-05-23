@@ -114,7 +114,7 @@ export default function EpisodeQueue({ episodes, currentIndex, onEpisodeSelect }
                         <p className="text-xs text-muted-foreground">Up Next</p>
                       ) : (
                         <p className="text-xs text-muted-foreground">
-                          {formatDate(episode.publishedAt)}
+                          {formatDate(episode.createdAt)}
                         </p>
                       )}
                     </div>
@@ -130,7 +130,7 @@ export default function EpisodeQueue({ episodes, currentIndex, onEpisodeSelect }
           <div className="mt-6 pt-4 border-t border-border">
             <div className="flex items-center justify-between text-sm text-muted-foreground">
               <span>
-                Total duration: {Math.floor(episodes.reduce((acc, ep) => acc + ep.duration, 0) / 3600)}h {Math.floor((episodes.reduce((acc, ep) => acc + ep.duration, 0) % 3600) / 60)}m
+                Total duration: {Math.floor(episodes.reduce((acc, ep) => acc + ep.duration, 0) / 60)}h {episodes.reduce((acc, ep) => acc + ep.duration, 0) % 60}m
               </span>
               <span>
                 {episodes.filter(ep => ep.isNew).length} new episodes

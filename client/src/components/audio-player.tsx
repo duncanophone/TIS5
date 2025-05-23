@@ -152,9 +152,12 @@ export default function AudioPlayer({
               {/* Episode Description & Show Notes */}
               <div className="mt-4 space-y-3">
                 <div>
-                  <h4 className="text-sm font-semibold text-orange-400 mb-2">Episode Description</h4>
+                  <h4 className="text-sm font-semibold text-orange-400 mb-2">About The Industrial Show</h4>
+                  <p className="text-sm text-gray-300 leading-relaxed mb-3">
+                    The Industrial Show archives by Null Void Records
+                  </p>
                   <p className="text-sm text-gray-300 leading-relaxed">
-                    Dive deep into the industrial underground with this carefully curated mix of dark electronic beats, industrial rhythms, and atmospheric soundscapes. Perfect for late-night listening sessions and exploring the darker side of electronic music.
+                    Duncan from Nox Pulso hosts a regular weekly Industrial Show on TotalRock Radio. This player is an archive of the episodes.
                   </p>
                 </div>
                 
@@ -162,8 +165,8 @@ export default function AudioPlayer({
                   <h4 className="text-sm font-semibold text-orange-400 mb-2">Show Notes</h4>
                   <div className="text-sm text-gray-300 space-y-1">
                     <p>• Industrial & EBM classics mixed with cutting-edge underground tracks</p>
-                    <p>• Duration: {episode.duration ? Math.ceil(episode.duration / 60) : '60'} minutes of non-stop industrial beats</p>
-                    <p>• Published: {episode.publishedAt ? new Date(episode.publishedAt).toLocaleDateString() : 'Recently'}</p>
+                    <p>• Duration: {episode.duration || '58'} minutes of non-stop industrial beats</p>
+                    <p>• Published: {episode.createdAt ? new Date(episode.createdAt).toLocaleDateString() : 'Recently'}</p>
                     <p>• Genre: Industrial, EBM, Dark Electronic, Synthwave</p>
                   </div>
                 </div>
@@ -259,9 +262,12 @@ export default function AudioPlayer({
           </div>
           
           {/* Show Title */}
-          <div className="mb-4 text-center bg-orange-900/20 border border-orange-500/30 rounded-lg p-3">
-            <div className="text-sm text-orange-400 font-medium mb-2">
-              🎵 Duncan (Nox Pulso) TotalRock Industrial Show Archives
+          <div className="mb-4 text-center bg-orange-900/20 border border-orange-500/30 rounded-lg p-4">
+            <div className="text-lg text-orange-400 font-bold mb-2">
+              The Industrial Show archives by Null Void Records
+            </div>
+            <div className="text-sm text-gray-300 mb-3 leading-relaxed">
+              Duncan from Nox Pulso hosts a regular weekly Industrial Show on TotalRock Radio. This player is an archive of the episodes.
             </div>
             <div className="text-xs text-gray-400">
               Click ▶️ in the Mixcloud player to start each episode

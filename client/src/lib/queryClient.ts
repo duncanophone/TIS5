@@ -48,9 +48,9 @@ export const getQueryFn: <T>(options: {
     return await res.json();
   };
 
-// Fetch authentic TotalRock Industrial episodes for static deployment
+// Static episode data - using embedded Mixcloud players directly
 async function fetchAuthenticEpisodes() {
-  // Use authentic episode data from the real TotalRock Industrial playlist
+  // Authentic TotalRock Industrial Show episodes - these URLs work with embedded players
   const authenticEpisodes = [
     {
       id: 1,

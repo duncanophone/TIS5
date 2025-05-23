@@ -8,6 +8,6 @@ services:
       - key: NODE_ENV
         value: production
       - key: MIXCLOUD_CLIENT_ID
-        value: qPSKNWZ9SQy3HEaZlP
+        value: qmRP02o8QnetUcvVtq
       - key: MIXCLOUD_CLIENT_SECRET
-        value: AnQM6CuZUpyEq3BItnQFTXCLyxWwjNso
+        value: aB0mCNIjkq0r8nBCDZwnpk5fFGck23ja

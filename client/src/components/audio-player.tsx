@@ -32,7 +32,7 @@ const useAutoAdvance = (episode: Episode | undefined, onNext: () => void, autoAd
     if (!episode || !autoAdvanceEnabled) return;
     
     // Set timer for near the end of the episode (leave 30 seconds before end)
-    const timeoutMs = Math.max((episode.duration - 30) * 1000, 30000); // At least 30 seconds
+    const timeoutMs = Math.max((episode.duration * 60 - 30) * 1000, 30000); // Convert minutes to milliseconds
     const minutes = Math.ceil(timeoutMs / 60000);
     
     console.log(`🎵 Auto-advance set for ${minutes} minutes for: ${episode.title}`);
@@ -242,11 +242,11 @@ export default function AudioPlayer({
           {/* Mixcloud Embed Player - Shows current episode */}
           <div className="mb-6 bg-gray-900 rounded-lg p-2">
             <iframe
-              key={`${episode.mixcloudUrl}-${Date.now()}`} // Force complete reload with timestamp
+              key={`${episode.mixcloudId}-${Date.now()}`} // Force complete reload with timestamp
               title={`TotalRock Industrial Show - ${episode.title}`}
               width="100%"
               height="180"
-              src={`https://www.mixcloud.com/widget/iframe/?feed=${encodeURIComponent(episode.mixcloudUrl)}&hide_cover=1&mini=0&autoplay=1&light=1&auto_play=true&start_playing=true`}
+              src={`https://www.mixcloud.com/widget/iframe/?feed=${encodeURIComponent(episode.mixcloudId)}&hide_cover=1&mini=0&autoplay=1&light=1&auto_play=true&start_playing=true`}
               className="rounded-lg"
               frameBorder="0"
               allow="autoplay; encrypted-media; fullscreen"
